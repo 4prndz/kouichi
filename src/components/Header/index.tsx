@@ -17,9 +17,9 @@ const Header = () => {
 
   return (
     <header className="mt-5 flex justify-between items-center">
-      <h1 className="text-3xl font-light font-roboto">
+      <h1 className="text-3xl font-extralight font-roboto">
         <Link href="/">
-          Victor <span className="font-semibold">Kouichi</span>
+          Victor <span className="font-normal">Kouichi</span>
         </Link>
       </h1>
       <nav className="flex text-lg gap-6 font-roboto font-light items-center">
