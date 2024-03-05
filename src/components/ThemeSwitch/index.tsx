@@ -8,42 +8,35 @@ const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const toggleTheme = () => {
+    if (resolvedTheme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
 
   if (!mounted) {
     return (
-      <div
-        className="border p-2 rounded-xl"
-        style={{ width: "36px", height: "36px" }}
-      ></div>
-    );
-  }
-
-  if (resolvedTheme === "dark") {
-    return (
       <div className="border p-2 rounded-xl">
-        <IoSunnyOutline
-          width="25px"
-          height="25px"
-          className="transition-all"
-          onClick={() => setTheme("light")}
-        />
+        <IoMoonOutline className="opacity-0" />
       </div>
     );
   }
 
-  if (resolvedTheme === "light") {
-    return (
-      <div className="border p-2 rounded-xl">
-        <IoMoonOutline
-          width="25px"
-          height="25px"
-          className="transition-all"
-          onClick={() => setTheme("dark")}
-        />
-      </div>
-    );
-  }
+  return (
+    <div className="border p-2 rounded-xl">
+      {resolvedTheme === "light" ? (
+        <IoMoonOutline onClick={toggleTheme} />
+      ) : (
+        <IoSunnyOutline onClick={toggleTheme} />
+      )}
+    </div>
+  );
 };
 
 export default ThemeSwitch;

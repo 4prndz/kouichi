@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Home = () => {
   return (
-    <main className="flex-1 flex justify-center items-center ">
+    <main className="flex-1 flex flex-col justify-center items-center ">
       <div className="max-w-screen-lg w-full m-auto px-4 flex gap-5">
         <div className="mt-10">
           <p className="font-roboto font-extralight text-center">

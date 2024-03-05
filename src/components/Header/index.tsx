@@ -5,7 +5,15 @@ import ThemeSwitch from "../ThemeSwitch";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
+  // Use desestruturação para extrair o valor retornado pela função usePathname
   const router = usePathname();
+
+  const pages = [
+    { href: "/", text: "/home" },
+    { href: "/blog", text: "/blog" },
+    { href: "/notes", text: "/notes" },
+    { href: "/projects", text: "/projects" },
+  ];
 
   return (
     <header className="mt-5 flex justify-between items-center">
@@ -15,35 +23,17 @@ const Header = () => {
         </Link>
       </h1>
       <nav className="flex text-lg gap-6 font-roboto font-light items-center">
-        <div>
-          <Link href="/" className={`${router === "/" ? "underline" : ""}`}>
-            /home
-          </Link>
-        </div>
-        <div>
-          <Link
-            href="/blog"
-            className={`${router === "/blog" ? "underline" : ""}`}
-          >
-            /blog
-          </Link>
-        </div>
-        <div>
-          <Link
-            href="/notes"
-            className={`${router === "/notes" ? "underline" : ""}`}
-          >
-            /notes
-          </Link>
-        </div>
-        <div>
-          <Link
-            href="/projects"
-            className={`${router === "/projects" ? "underline" : ""}`}
-          >
-            /projects
-          </Link>
-        </div>
+        {/* Links para diferentes rotas */}
+        {pages.map(({ href, text }) => (
+          <div key={href}>
+            <Link
+              href={href}
+              className={`${router === href ? "border-b" : ""}`}
+            >
+              {text}
+            </Link>
+          </div>
+        ))}
         <ThemeSwitch />
       </nav>
     </header>
