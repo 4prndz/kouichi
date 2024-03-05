@@ -28,7 +28,7 @@ const Header = () => {
           <div key={href}>
             <Link
               href={href}
-              className={`${router === href ? "border-b" : ""}`}
+              className={`${router === href ? "border-b border-b-gray-500" : ""}`}
             >
               {text}
             </Link>
