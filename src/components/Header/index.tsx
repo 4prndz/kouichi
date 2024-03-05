@@ -5,7 +5,6 @@ import ThemeSwitch from "../ThemeSwitch";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
-  // Use desestruturação para extrair o valor retornado pela função usePathname
   const router = usePathname();
 
   const pages = [
@@ -13,22 +12,20 @@ const Header = () => {
     { href: "/blog", text: "/blog" },
     { href: "/notes", text: "/notes" },
     { href: "/projects", text: "/projects" },
+    { href: "/aboutme", text: "/about me" },
   ];
 
   return (
-    <header className="mt-5 flex justify-between items-center">
-      <h1 className="text-3xl font-extralight font-roboto">
-        <Link href="/">
-          Victor <span className="font-normal">Kouichi</span>
-        </Link>
-      </h1>
-      <nav className="flex text-lg gap-6 font-roboto font-light items-center">
-        {/* Links para diferentes rotas */}
+    <header className="mt-5 flex justify-between items-center pb-3 border-b">
+      <Link href="/">
+        <h1 className="text-3xl font-[Inter] font-semibold">4prndz</h1>
+      </Link>
+      <nav className="flex text-md gap-6 font-normal items-center">
         {pages.map(({ href, text }) => (
           <div key={href}>
             <Link
               href={href}
-              className={`${router === href ? "border-b border-b-gray-500" : ""}`}
+              className={`${router === href ? "text-middle-blue border-b border-b-middle-blue" : ""} transition hover:text-middle-blue `}
             >
               {text}
             </Link>

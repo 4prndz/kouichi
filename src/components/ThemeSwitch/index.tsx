@@ -22,14 +22,14 @@ const ThemeSwitch = () => {
 
   if (!mounted) {
     return (
-      <div className="border p-2 rounded-xl">
+      <div className="border-2 p-2 rounded-xl">
         <IoMoonOutline className="opacity-0" />
       </div>
     );
   }
 
   return (
-    <div className="border p-2 rounded-xl">
+    <div className="border-2 p-2 rounded-xl">
       {resolvedTheme === "light" ? (
         <IoMoonOutline onClick={toggleTheme} />
       ) : (

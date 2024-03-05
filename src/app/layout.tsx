@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className}>
-        <div className="flex max-w-5xl m-auto flex-col min-h-screen">
+        <div className="flex max-w-4xl m-auto flex-col min-h-screen">
           <Providers>
             <Header />
             <Providers>{children}</Providers>

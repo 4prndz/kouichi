@@ -1,24 +1,58 @@
 "use client";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Link from "next/link";
 import MathAnime from "../assets/mathanime.jpg";
 import Image from "next/image";
+import { FiGithub, FiTwitter, FiLinkedin, FiMail } from "react-icons/fi";
 
 const Home = () => {
   return (
     <main className="flex-1 flex flex-col justify-center items-center ">
       <div>
-        <div className="max-w-screen-lg w-full m-auto px-4 flex gap-5 items-center">
-          <div>
-            <p className="font-roboto font-extralight text-center">
-              I'm a 20-year-old technology enthusiast and full-stack developer
-              (suck in front and back), currently honing my skills in TypeScript
-              and Rust and functional languages. I work with PHP and enjoy
-              delving into the intricacies of low-level.
+        <div className="max-w-screen-lg w-full m-auto px-4 flex gap-9 items-center">
+          <div className="flex flex-col gap-5 justify-center items-start font-roboto flex-1">
+            <h1 className="text-4xl">
+              Hi, I&apos;m{" "}
+              <span className="border-b-2 border-b-black">Kouichi</span>
+            </h1>
+            <p className="font-roboto font-extralight">
+              I&apos;m a 20-year-old technology enthusiast and full-stack
+              developer (suck in both), currently learning TypeScript and Rust
+              and functional languages.
             </p>
+            <div className="flex gap-6 items-center">
+              <Link
+                href="https://github.com/4prndz"
+                target="_blank"
+                className="flex items-center gap-3 text-white bg-middle-blue px-5 py-3 rounded-lg shadow-xl transition hover:scale-105"
+              >
+                <FiGithub className="text-xl" />
+                <p className="text-lg font-roboto">github</p>
+              </Link>
+              <Link
+                href="https://twitter.com/4prndz"
+                target="_blank"
+                className="transition hover:scale-105"
+              >
+                <FiTwitter className="text-xl" />
+              </Link>
+              <Link
+                href="https://linkedin.com/in/4prndz"
+                target="_blank"
+                className="transition hover:scale-105"
+              >
+                <FiLinkedin className="text-xl" />
+              </Link>
+              <Link
+                href="mailto:victorkouichi40@gmail.com"
+                target="_blank"
+                className="transition hover:scale-105"
+              >
+                <FiMail className="text-xl" />
+              </Link>
+            </div>
           </div>
-          <div className="flex flex-col items-end">
+          <div className="flex flex-col items-end flex-1">
             <Image
               src={MathAnime}
               alt="math anime"
