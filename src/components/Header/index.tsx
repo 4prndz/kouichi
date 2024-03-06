@@ -15,9 +15,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="mt-5 flex justify-between items-center pb-3 border-b">
+    <header className="mt-5 mx-5 flex justify-between items-center pb-3 border-b">
       <Link href="/">
-        <h1 className="text-3xl font-[Inter] font-semibold">4prndz</h1>
+        <h1 className="text-3xl font-[Inter] font-normal select-none">
+          | 4prndz |
+        </h1>
       </Link>
       <nav className="flex text-md gap-6 font-normal items-center">
         {pages.map(({ href, text }) => (
@@ -30,7 +32,9 @@ const Header = () => {
             </Link>
           </div>
         ))}
-        <ThemeSwitch />
+        <div className="transition">
+          <ThemeSwitch />
+        </div>
       </nav>
     </header>
   );

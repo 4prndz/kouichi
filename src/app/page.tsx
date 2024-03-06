@@ -7,11 +7,11 @@ import { FiGithub, FiTwitter, FiLinkedin, FiMail } from "react-icons/fi";
 
 const Home = () => {
   return (
-    <main className="flex-1 flex flex-col justify-center items-center ">
+    <main className="flex-1 flex flex-col justify-center items-center text-center lg:text-start mt-20 lg:mt-10">
       <div>
-        <div className="max-w-screen-lg w-full mx-auto px-4 flex gap-9 items-center">
-          <div className="flex flex-col gap-5 justify-center items-start font-roboto flex-1">
-            <h1 className="text-4xl">
+        <div className="max-w-screen-lg w-full mx-auto px-4 flex flex-col gap-9 lg:flex-row">
+          <div className="w-full flex flex-col gap-5 justify-center items-center font-roboto flex-1 lg:items-start">
+            <h1 className="text-4xl ">
               Hi, I&apos;m{" "}
               <span className="border-b-2 border-b-black">Kouichi</span>
             </h1>
@@ -29,6 +29,7 @@ const Home = () => {
                 <FiGithub className="text-xl" />
                 <p className="text-lg font-roboto">github</p>
               </Link>
+
               <Link
                 href="https://twitter.com/4prndz"
                 target="_blank"
@@ -52,11 +53,11 @@ const Home = () => {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col items-end flex-1">
+          <div className="flex flex-col items-end flex-1 lg:visible">
             <Image
               src={MathAnime}
               alt="math anime"
-              className="rounded-xl shadow-lg border"
+              className="rounded-xl shadow-lg border "
             />
             <span className="text-sm text-gray-500 mt-1">
               <a href="https://twitter.com/nyr50ml/" target="_blank">
@@ -65,7 +66,7 @@ const Home = () => {
             </span>
           </div>
         </div>
-        <hr className="border-gray-300 w-full my-10" />
+        <hr className="border-gray-300 w-full my-20" />
         <section className="max-w-screen-lg w-full mx-auto px-4 gap-9">
           <h2 className="font-roboto mb-8">
             my musica taste
